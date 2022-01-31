@@ -1,0 +1,17 @@
+    int numberOfSteps(int num) {
+        vector<int> ans;
+        if(num<=3) return num;
+        for(int i=0;i<=num;++i){
+            if(i<=3){
+                ans.push_back(i);
+            }
+            else if(i%2==0){
+                int k =i/2;
+                ans.push_back(ans[k]+1);
+            }
+            else{
+                ans.push_back(ans[i-1]+1);
+            }
+        }
+        return ans[num];
+    }
